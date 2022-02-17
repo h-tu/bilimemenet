@@ -32,6 +32,8 @@ for dm in dms:
         continue
     f.write(text + ",")
     f.write(str(datetime.datetime.fromtimestamp(dm.send_time)))
+    f.write(',')
+    f.write(str(dm.dm_time))
     f.write("\n")
     #print(dm.dm_time)
     #print(datetime.datetime.fromtimestamp(dm.send_time))
