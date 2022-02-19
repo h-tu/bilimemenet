@@ -104,4 +104,5 @@ async def process_single_video(BVID):
 
 def list_to_csv(lst):
     df = pd.DataFrame(lst, columns = ['Bullet Chat', 'Frequency', 'BVID', 'Source Video Title', 'Category ID', 'Channel ID', 'Source Video View Count'])
-    df.to_csv('out.csv')  
+    df.to_csv('out.csv') 
+    return df
