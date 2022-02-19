@@ -1,3 +1,7 @@
+# CS685 Spring 2022 
+# Feb. 19, 2022
+# Hongyu Tu
+
 import re
 import time
 import asyncio
@@ -7,9 +11,9 @@ import numpy as np
 import pandas as pd 
 import nest_asyncio
 from tqdm import tqdm
-from collections import Counter
-from bilibili_api import video, sync
 
+from collections import Counter
+from bilibili_api import video, sync, exceptions
 
 hiragana_full = r'[ぁ-ゟ]'
 katakana_full = r'[゠-ヿ]'
@@ -28,11 +32,11 @@ def process_category(rid = 47, day = 7):
     bvid_lst = [line.split('\"')[0] for line in bvid_lst]
     
     tmp_lst = []
-    for single_video in (bvid_lst):
-        title, tid, channel_id, view_count, bc_lst = asyncio.run(process_single_video(single_video))
+    for video_id in (bvid_lst):
+        title, tid, channel_id, view_count, bc_lst = asyncio.run(process_single_video(video_id))
         for bc_info in bc_lst:
             bc, freq = bc_info
-            tmp = [bc, freq, title, tid, channel_id, view_count]
+            tmp = [bc, freq, video_id, title, tid, channel_id, view_count]
             tmp_lst.append(tmp)
     return tmp_lst
 
@@ -78,18 +82,26 @@ def init_category_dic():
 
 async def process_single_video(BVID):
     v = video.Video(bvid=BVID)
-    dms = sync(v.get_danmakus(0))
-    info = await v.get_info()
-    
-    title = clean_text(info['title'])
-    channel_id = info['owner']['name']
-    tid = info['tid'] 
-    view_count = info['stat']['view']
-    bc_lst = process_dms(dms)
-    
-    return (title, tid, channel_id, view_count, bc_lst)
+    dms, info = None, None
+    try:
+        dms = sync(v.get_danmakus(0))
+    except exceptions.ResponseCodeException:
+        pass
+    try:
+        info = await v.get_info()
+    except exceptions.ResponseCodeException:
+        pass
 
+    if dms is not None and info is not None:
+        title = clean_text(info['title'])
+        channel_id = info['owner']['name']
+        tid = info['tid'] 
+        view_count = info['stat']['view']
+        bc_lst = process_dms(dms)
+        return (title, tid, channel_id, view_count, bc_lst)
+    else:
+        return (None, None, None, None, [])
 
 def list_to_csv(lst):
-    df = pd.DataFrame(lst, columns = ['Bullet Chat', 'Frequency', 'Source Video Title', 'Category ID', 'Channel ID', 'Source Video View Count'])
+    df = pd.DataFrame(lst, columns = ['Bullet Chat', 'Frequency', 'BVID', 'Source Video Title', 'Category ID', 'Channel ID', 'Source Video View Count'])
     df.to_csv('out.csv')  
