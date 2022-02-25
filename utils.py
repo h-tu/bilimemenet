@@ -1,5 +1,5 @@
 # CS685 Spring 2022 
-# Feb. 19, 2022
+# Feb. 24, 2022
 # Hongyu Tu
 
 import re
@@ -11,9 +11,10 @@ import numpy as np
 import pandas as pd 
 import nest_asyncio
 from tqdm import tqdm
+from bv2av import bv_to_av
 
 from collections import Counter
-from bilibili_api import video, sync, exceptions
+from bilibili_api import video, comment, sync, exceptions
 
 hiragana_full = r'[ぁ-ゟ]'
 katakana_full = r'[゠-ヿ]'
@@ -31,14 +32,18 @@ def process_category(rid = 47, day = 7):
     bvid_lst = requests.get(api).text.split("\"bvid\":\"")[1:]
     bvid_lst = [line.split('\"')[0] for line in bvid_lst]
     
-    tmp_lst = []
+    tmp1_lst, tmp2_lst = [], []
     for video_id in (bvid_lst):
-        title, tid, channel_id, view_count, bc_lst = asyncio.run(process_single_video(video_id))
+        title, tid, channel_id, view_count, bc_lst, cmt_lst = asyncio.run(process_single_video(video_id))
         for bc_info in bc_lst:
             bc, freq = bc_info
             tmp = [bc, freq, video_id, title, tid, channel_id, view_count]
-            tmp_lst.append(tmp)
-    return tmp_lst
+            tmp1_lst.append(tmp)
+        for cmt_info in cmt_lst:
+            cmt, freq = cmt_info
+            tmp = [cmt, freq, video_id, title, tid, channel_id, view_count]
+            tmp2_lst.append(tmp)
+    return tmp1_lst, tmp2_lst
 
 
 def clean_text(text):
@@ -50,10 +55,10 @@ def clean_text(text):
     return None if text == '' else text
 
 
-def process_dms(dms):
+def process_text_lst(txt_lst, dm_or_cmt = True):
     text_lst = []
-    for dm in dms:
-        text = clean_text(dm.text) 
+    for i in txt_lst:
+        text = clean_text(i.text if dm_or_cmt else i) 
         if text == None:
             continue
         text_lst.append(text)
@@ -82,7 +87,7 @@ def init_category_dic():
 
 async def process_single_video(BVID):
     v = video.Video(bvid=BVID)
-    dms, info = None, None
+    dms, info, cmt_lst = None, None, []
     try:
         dms = sync(v.get_danmakus(0))
     except exceptions.ResponseCodeException:
@@ -92,19 +97,51 @@ async def process_single_video(BVID):
     except exceptions.ResponseCodeException:
         pass
 
+    try:
+        cmt_lst = sync(get_comment(BVID))
+    except exceptions.NetworkException:
+        pass
+
     if dms is not None and info is not None:
         title = clean_text(info['title'])
         channel_id = info['owner']['name']
         tid = info['tid'] 
         view_count = info['stat']['view']
-        bc_lst = process_dms(dms)
-        return (title, tid, channel_id, view_count, bc_lst)
+        bc_lst = process_text_lst(dms)
+        cmt_lst = process_text_lst(cmt_lst, False)
+        return (title, tid, channel_id, view_count, bc_lst, cmt_lst)
     else:
-        return (None, None, None, None, [])
+        return (None, None, None, None, [], [])
 
-def list_to_csv(lst):
-    df = pd.DataFrame(lst, columns = ['Bullet Chat', 'Frequency', 'BVID', 'Source Video Title', 'Category ID', 'Channel ID', 'Source Video View Count'])
-    df = df.drop_duplicates(subset=['BVID', 'Bullet Chat'])
+
+def list_to_csv(lst, name):
+    df = pd.DataFrame(lst, columns = [name, 'Frequency', 'BVID', 'Source Video Title', 'Category ID', 'Channel ID', 'Source Video View Count'])
+    df = df.drop_duplicates(subset=['BVID', name])
     df = df.sort_values(by=['Frequency'])
-    df.to_csv('out.csv') 
+    df.to_csv('{}.csv'.format(name)) 
     return df
+
+
+async def get_comment(BVID):
+    comment_lst = []
+    comments, page, count = [], 1, 0
+    AVID = bv_to_av(BVID)
+
+    if AVID != '获取av号失败':
+        AVID = int(AVID)
+        while True:
+            c = await comment.get_comments(AVID, comment.ResourceType.VIDEO, page)      # 获取评论
+            comments.extend(c['replies'])                                               # 存储评论
+            count += c['page']['size']                                                  # 增加已获取数量
+            page += 1                                                                   # 增加页码
+
+            if count >= c['page']['count']:
+                break                                                                   # 当前已获取数量已达到评论总数，跳出循环
+
+        for cmt in comments:
+            comment_lst.append(cmt['content']['message'])
+            # print(f"{cmt['member']['uname']}: {cmt['content']['message']}")
+
+        # 打印评论总数
+        # print(f"\n\n共有 {count} 条评论（不含子评论）")
+    return comment_lst
