@@ -25,7 +25,7 @@ from torch.utils.data import Dataset, DataLoader
 import pytorch_lightning as pl
 from T5Finetunner import ImdbDataset 
 
-data_path = "/media/zihao/New Volume1/UMASS/685_e/github/Zihao_branch/data/aclImdb_v1/aclImdb"
+data_path = "/media/zihao/New Volume1/UMASS/685_e/github/Zihao_branch/data/Danmu_byt5/pkl"
 
 
 args_dict = dict(

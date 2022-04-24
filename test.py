@@ -57,16 +57,25 @@ model = T5ForConditionalGeneration.from_pretrained('t5_base_imdb_sentiment')
 model.to(device)
 
 
+#Single test
+############################################################
+# outputs = []
+# targets = []
+# outs = model.generate(input_ids=batch['source_ids'].cuda(), 
+#                               attention_mask=batch['source_mask'].cuda(), 
+#                               max_length=2)
 
+# dec = [tokenizer.decode(ids) for ids in outs]
 
-outs = model.generate(input_ids=batch['source_ids'].cuda(), 
-                              attention_mask=batch['source_mask'].cuda(), 
-                              max_length=2)
+# texts = [tokenizer.decode(ids) for ids in batch['source_ids']]
+# targets = [tokenizer.decode(ids) for ids in batch['target_ids']]
 
-dec = [tokenizer.decode(ids) for ids in outs]
+# for i,t in enumerate(targets):
+#     targets[i] = t.replace('</s>','')
+# for i,t in enumerate(outputs):
+#     outputs[i] = t.replace('<pad> ','')
+##################################################################
 
-texts = [tokenizer.decode(ids) for ids in batch['source_ids']]
-targets = [tokenizer.decode(ids) for ids in batch['target_ids']]
 
 # for i in range(32):
 #     lines = textwrap.wrap("Review:\n%s\n" % texts[i], width=100)
@@ -86,6 +95,12 @@ for batch in tqdm(loader):
 
   dec = [tokenizer.decode(ids) for ids in outs]
   target = [tokenizer.decode(ids) for ids in batch["target_ids"]]
+  
+  for i,t in enumerate(target):
+    target[i] = t.replace('</s>','')
+  for i,t in enumerate(dec):
+    dec[i] = t.replace('<pad> ','')
+  
   
   outputs.extend(dec)
   targets.extend(target)

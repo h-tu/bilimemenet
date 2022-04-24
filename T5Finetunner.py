@@ -14,10 +14,11 @@ from transformers import T5ForConditionalGeneration, T5Tokenizer, AdamW, get_lin
 import torch
 from torch.utils.data import Dataset, DataLoader
 import pytorch_lightning as pl
+from DanMuDataset import DanMuDataset
 
 def get_dataset(tokenizer, type_path, args):
-      return ImdbDataset(tokenizer=tokenizer, data_dir=args.data_dir, type_path=type_path,  max_len=args.max_seq_length)
-
+  #return ImdbDataset(tokenizer=tokenizer, data_dir=args.data_dir, type_path=type_path,  max_len=args.max_seq_length)
+  return DanMuDataset(tokenizer=tokenizer, data_dir=args.data_dir, type_path=type_path,  max_len=args.max_seq_length)
 
 class T5FineTuner(pl.LightningModule):
   def __init__(self, hparams):
