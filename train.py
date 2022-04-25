@@ -24,6 +24,7 @@ import torch
 from torch.utils.data import Dataset, DataLoader
 import pytorch_lightning as pl
 from T5Finetunner import ImdbDataset 
+from DanMuDataset import DanMuDataset
 
 data_path = "/media/zihao/New Volume1/UMASS/685_e/github/Zihao_branch/data/Danmu_byt5/pkl"
 
@@ -67,17 +68,10 @@ random.shuffle(train_neg_files)
 # for f in val_neg_files:
 #     shutil.move(f,  data_path+'/val/neg')
 
-val_pos_files = glob.glob( data_path +'/val/pos/*.txt')
-val_neg_files = glob.glob( data_path +'/val/neg/*.txt')
-print('val:')
-print(len(val_neg_files),len(val_pos_files))
-
 tokenizer = T5Tokenizer.from_pretrained('t5-base')
 
-ids_neg = tokenizer.encode('negative </s>')
-ids_pos = tokenizer.encode('positive </s>')
 
-dataset = ImdbDataset(tokenizer, data_path, 'val',  max_len=512)
+dataset = DanMuDataset(tokenizer, data_path, 'val',  max_len=512)
 print('dataset:')
 print(len(dataset))
 
@@ -101,15 +95,16 @@ train_params = dict(
 )
 
 def get_dataset(tokenizer, type_path, args):
-  return ImdbDataset(tokenizer=tokenizer, data_dir=args.data_dir, type_path=type_path,  max_len=args.max_seq_length)
+    #return ImdbDataset(tokenizer=tokenizer, data_dir=args.data_dir, type_path=type_path,  max_len=args.max_seq_length)
+    return DanMuDataset(tokenizer=tokenizer, data_dir=args.data_dir, type_path=type_path,  max_len=args.max_seq_length)
 
 model = T5FineTuner(args)
-print(model.val_dataloader())
+#print(model.val_dataloader())
 
 trainer = pl.Trainer(**train_params)
 trainer.fit(model)
 
-model.model.save_pretrained('t5_base_imdb_sentiment')
+model.model.save_pretrained('t5_base_danmu_sentiment')
 
 
 #####################################################

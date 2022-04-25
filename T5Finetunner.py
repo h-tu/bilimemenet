@@ -10,7 +10,7 @@ import re
 from itertools import chain
 from string import punctuation
 
-from transformers import T5ForConditionalGeneration, T5Tokenizer, AdamW, get_linear_schedule_with_warmup
+from transformers import T5ForConditionalGeneration, T5Tokenizer, AdamW, get_linear_schedule_with_warmup, AutoTokenizer
 import torch
 from torch.utils.data import Dataset, DataLoader
 import pytorch_lightning as pl
@@ -26,7 +26,8 @@ class T5FineTuner(pl.LightningModule):
     self.hparams = hparams
     
     self.model = T5ForConditionalGeneration.from_pretrained(hparams.model_name_or_path)
-    self.tokenizer = T5Tokenizer.from_pretrained(hparams.tokenizer_name_or_path)
+    #self.tokenizer = T5Tokenizer.from_pretrained(hparams.tokenizer_name_or_path)
+    self.tokenizer = AutoTokenizer.from_pretrained(hparams.tokenizer_name_or_path)
   
   def is_logger(self):
     return self.trainer.proc_rank <= 0
