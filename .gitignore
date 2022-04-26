@@ -1,7 +1,9 @@
 .ipynb_checkpoints/
+.DS_Store
 out.csv
 pickle
 comment.csv
 danmu.csv
 danmu_0219.csv
+test_trainer
 *.pkl
