@@ -1,7 +1,6 @@
 .ipynb_checkpoints/
 out.csv
-pickle
+danmu_dist.pkl
 comment.csv
 danmu.csv
 danmu_0219.csv
-*.pkl
