@@ -1,6 +1,7 @@
-
+.ipynb_checkpoints/
 out.csv
 pickle
 comment.csv
 danmu.csv
 danmu_0219.csv
+*.pkl
