@@ -5,4 +5,5 @@ pickle
 comment.csv
 danmu.csv
 danmu_0219.csv
+test_trainer
 *.pkl
