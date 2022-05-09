@@ -31,7 +31,7 @@ data_path = "/media/zihao/New Volume1/UMASS/685_e/github/Zihao_branch/data/Danmu
 
 args_dict = dict(
     data_dir= data_path, # path for data files
-    output_dir="checkpoints", # path to save the checkpoints
+    output_dir="/checkpoints", # path to save the checkpoints
     model_name_or_path='t5-base',
     tokenizer_name_or_path='t5-base',
     max_seq_length=512,
