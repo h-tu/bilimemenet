@@ -1,0 +1,259 @@
+[2022-05-12 13:57:03,860 INFO] Batch size: 120
+[2022-05-12 13:57:03,861 INFO] The number of training instances: 107985
+[2022-05-12 13:57:03,862 INFO] Start training.
+[2022-05-12 13:58:16,136 INFO] Epoch id: 1, Training steps: 100, Avg loss: 1.698
+[2022-05-12 13:59:27,145 INFO] Epoch id: 1, Training steps: 200, Avg loss: 1.644
+[2022-05-12 14:00:38,183 INFO] Epoch id: 1, Training steps: 300, Avg loss: 1.633
+[2022-05-12 14:01:49,196 INFO] Epoch id: 1, Training steps: 400, Avg loss: 1.618
+[2022-05-12 14:03:00,207 INFO] Epoch id: 1, Training steps: 500, Avg loss: 1.613
+[2022-05-12 14:04:11,220 INFO] Epoch id: 1, Training steps: 600, Avg loss: 1.596
+[2022-05-12 14:05:22,234 INFO] Epoch id: 1, Training steps: 700, Avg loss: 1.593
+[2022-05-12 14:06:33,248 INFO] Epoch id: 1, Training steps: 800, Avg loss: 1.579
+[2022-05-12 14:07:44,181 INFO] Epoch id: 1, Training steps: 900, Avg loss: 1.581
+[2022-05-12 14:08:37,326 INFO] Confusion matrix:
+[2022-05-12 14:08:37,326 INFO] tensor([[   6,    1,    0,    0,    2,    0],
+        [1768, 4796, 1276, 2519, 2448,  949],
+        [  82,  185,  306,  138,  139,   43],
+        [ 253,  532,  208,  728,  480,  100],
+        [ 813, 1857,  596, 1888, 4047,  547],
+        [  26,   57,   23,   26,   43,  115]])
+[2022-05-12 14:08:37,327 INFO] Report precision, recall, and f1:
+[2022-05-12 14:08:37,327 INFO] Label 0: 0.667, 0.002, 0.004
+[2022-05-12 14:08:37,327 INFO] Label 1: 0.349, 0.646, 0.453
+[2022-05-12 14:08:37,327 INFO] Label 2: 0.343, 0.127, 0.185
+[2022-05-12 14:08:37,327 INFO] Label 3: 0.316, 0.137, 0.192
+[2022-05-12 14:08:37,327 INFO] Label 4: 0.415, 0.565, 0.479
+[2022-05-12 14:08:37,327 INFO] Label 5: 0.397, 0.066, 0.113
+[2022-05-12 14:08:37,327 INFO] Acc. (Correct/Total): 0.3703 (9998/26997) 
+[2022-05-12 14:09:49,323 INFO] Epoch id: 2, Training steps: 100, Avg loss: 1.560
+[2022-05-12 14:11:00,347 INFO] Epoch id: 2, Training steps: 200, Avg loss: 1.560
+[2022-05-12 14:12:11,367 INFO] Epoch id: 2, Training steps: 300, Avg loss: 1.546
+[2022-05-12 14:13:22,391 INFO] Epoch id: 2, Training steps: 400, Avg loss: 1.544
+[2022-05-12 14:14:33,413 INFO] Epoch id: 2, Training steps: 500, Avg loss: 1.531
+[2022-05-12 14:15:44,432 INFO] Epoch id: 2, Training steps: 600, Avg loss: 1.528
+[2022-05-12 14:16:55,450 INFO] Epoch id: 2, Training steps: 700, Avg loss: 1.511
+[2022-05-12 14:18:06,466 INFO] Epoch id: 2, Training steps: 800, Avg loss: 1.526
+[2022-05-12 14:19:17,395 INFO] Epoch id: 2, Training steps: 900, Avg loss: 1.514
+[2022-05-12 14:20:10,795 INFO] Confusion matrix:
+[2022-05-12 14:20:10,796 INFO] tensor([[  19,    4,    1,    1,    1,    1],
+        [1427, 4224,  968, 1749, 1714,  641],
+        [  44,  104,  308,   48,   63,   22],
+        [ 733, 1543,  566, 2114, 1628,  242],
+        [ 635, 1336,  502, 1265, 3604,  495],
+        [  90,  217,   64,  122,  149,  353]])
+[2022-05-12 14:20:10,796 INFO] Report precision, recall, and f1:
+[2022-05-12 14:20:10,796 INFO] Label 0: 0.704, 0.006, 0.013
+[2022-05-12 14:20:10,796 INFO] Label 1: 0.394, 0.569, 0.465
+[2022-05-12 14:20:10,796 INFO] Label 2: 0.523, 0.128, 0.205
+[2022-05-12 14:20:10,796 INFO] Label 3: 0.310, 0.399, 0.349
+[2022-05-12 14:20:10,796 INFO] Label 4: 0.460, 0.503, 0.481
+[2022-05-12 14:20:10,796 INFO] Label 5: 0.355, 0.201, 0.257
+[2022-05-12 14:20:10,796 INFO] Acc. (Correct/Total): 0.3935 (10622/26997) 
+[2022-05-12 14:21:24,930 INFO] Epoch id: 3, Training steps: 100, Avg loss: 1.496
+[2022-05-12 14:22:35,953 INFO] Epoch id: 3, Training steps: 200, Avg loss: 1.493
+[2022-05-12 14:23:46,971 INFO] Epoch id: 3, Training steps: 300, Avg loss: 1.482
+[2022-05-12 14:24:57,991 INFO] Epoch id: 3, Training steps: 400, Avg loss: 1.481
+[2022-05-12 14:26:09,011 INFO] Epoch id: 3, Training steps: 500, Avg loss: 1.466
+[2022-05-12 14:27:20,033 INFO] Epoch id: 3, Training steps: 600, Avg loss: 1.472
+[2022-05-12 14:28:31,054 INFO] Epoch id: 3, Training steps: 700, Avg loss: 1.454
+[2022-05-12 14:29:42,083 INFO] Epoch id: 3, Training steps: 800, Avg loss: 1.471
+[2022-05-12 14:30:53,026 INFO] Epoch id: 3, Training steps: 900, Avg loss: 1.463
+[2022-05-12 14:31:46,443 INFO] Confusion matrix:
+[2022-05-12 14:31:46,443 INFO] tensor([[  98,   26,    3,   17,    7,    3],
+        [1357, 4100,  983, 1686, 1373,  583],
+        [  12,   20,  178,   15,   11,    3],
+        [ 150,  237,   96,  591,  178,   59],
+        [1168, 2690, 1030, 2711, 5316,  599],
+        [ 163,  355,  119,  279,  274,  507]])
+[2022-05-12 14:31:46,444 INFO] Report precision, recall, and f1:
+[2022-05-12 14:31:46,444 INFO] Label 0: 0.636, 0.033, 0.063
+[2022-05-12 14:31:46,444 INFO] Label 1: 0.407, 0.552, 0.468
+[2022-05-12 14:31:46,444 INFO] Label 2: 0.745, 0.074, 0.134
+[2022-05-12 14:31:46,444 INFO] Label 3: 0.451, 0.112, 0.179
+[2022-05-12 14:31:46,444 INFO] Label 4: 0.393, 0.743, 0.514
+[2022-05-12 14:31:46,444 INFO] Label 5: 0.299, 0.289, 0.294
+[2022-05-12 14:31:46,444 INFO] Acc. (Correct/Total): 0.3997 (10790/26997) 
+[2022-05-12 14:33:00,571 INFO] Epoch id: 4, Training steps: 100, Avg loss: 1.429
+[2022-05-12 14:34:11,593 INFO] Epoch id: 4, Training steps: 200, Avg loss: 1.430
+[2022-05-12 14:35:22,616 INFO] Epoch id: 4, Training steps: 300, Avg loss: 1.429
+[2022-05-12 14:36:33,642 INFO] Epoch id: 4, Training steps: 400, Avg loss: 1.426
+[2022-05-12 14:37:44,662 INFO] Epoch id: 4, Training steps: 500, Avg loss: 1.419
+[2022-05-12 14:38:55,684 INFO] Epoch id: 4, Training steps: 600, Avg loss: 1.420
+[2022-05-12 14:40:06,704 INFO] Epoch id: 4, Training steps: 700, Avg loss: 1.430
+[2022-05-12 14:41:17,728 INFO] Epoch id: 4, Training steps: 800, Avg loss: 1.409
+[2022-05-12 14:42:28,666 INFO] Epoch id: 4, Training steps: 900, Avg loss: 1.410
+[2022-05-12 14:43:21,790 INFO] Confusion matrix:
+[2022-05-12 14:43:21,791 INFO] tensor([[ 408,  256,   49,  121,   87,   37],
+        [ 820, 3140,  479, 1043,  871,  473],
+        [ 126,  313,  643,  165,  142,   42],
+        [ 445,  971,  300, 1591,  764,  225],
+        [1069, 2580,  870, 2262, 5176,  627],
+        [  80,  168,   68,  117,  119,  350]])
+[2022-05-12 14:43:21,791 INFO] Report precision, recall, and f1:
+[2022-05-12 14:43:21,791 INFO] Label 0: 0.426, 0.138, 0.209
+[2022-05-12 14:43:21,791 INFO] Label 1: 0.460, 0.423, 0.441
+[2022-05-12 14:43:21,791 INFO] Label 2: 0.449, 0.267, 0.335
+[2022-05-12 14:43:21,791 INFO] Label 3: 0.370, 0.300, 0.332
+[2022-05-12 14:43:21,791 INFO] Label 4: 0.411, 0.723, 0.524
+[2022-05-12 14:43:21,791 INFO] Label 5: 0.388, 0.200, 0.264
+[2022-05-12 14:43:21,791 INFO] Acc. (Correct/Total): 0.4189 (11308/26997) 
+[2022-05-12 14:44:35,944 INFO] Epoch id: 5, Training steps: 100, Avg loss: 1.376
+[2022-05-12 14:45:46,964 INFO] Epoch id: 5, Training steps: 200, Avg loss: 1.385
+[2022-05-12 14:46:57,987 INFO] Epoch id: 5, Training steps: 300, Avg loss: 1.381
+[2022-05-12 14:48:09,007 INFO] Epoch id: 5, Training steps: 400, Avg loss: 1.381
+[2022-05-12 14:49:20,035 INFO] Epoch id: 5, Training steps: 500, Avg loss: 1.372
+[2022-05-12 14:50:31,066 INFO] Epoch id: 5, Training steps: 600, Avg loss: 1.367
+[2022-05-12 14:51:42,094 INFO] Epoch id: 5, Training steps: 700, Avg loss: 1.374
+[2022-05-12 14:52:53,118 INFO] Epoch id: 5, Training steps: 800, Avg loss: 1.372
+[2022-05-12 14:54:04,063 INFO] Epoch id: 5, Training steps: 900, Avg loss: 1.361
+[2022-05-12 14:54:57,436 INFO] Confusion matrix:
+[2022-05-12 14:54:57,437 INFO] tensor([[ 554,  321,   92,  189,  157,   69],
+        [1338, 4687,  901, 1818, 1753,  741],
+        [ 124,  302,  679,  188,  179,   63],
+        [ 455, 1083,  405, 2080, 1295,  219],
+        [ 357,  831,  247,  849, 3571,  245],
+        [ 120,  204,   85,  175,  204,  417]])
+[2022-05-12 14:54:57,437 INFO] Report precision, recall, and f1:
+[2022-05-12 14:54:57,437 INFO] Label 0: 0.401, 0.188, 0.256
+[2022-05-12 14:54:57,438 INFO] Label 1: 0.417, 0.631, 0.502
+[2022-05-12 14:54:57,438 INFO] Label 2: 0.442, 0.282, 0.344
+[2022-05-12 14:54:57,438 INFO] Label 3: 0.376, 0.393, 0.384
+[2022-05-12 14:54:57,438 INFO] Label 4: 0.585, 0.499, 0.539
+[2022-05-12 14:54:57,438 INFO] Label 5: 0.346, 0.238, 0.282
+[2022-05-12 14:54:57,438 INFO] Acc. (Correct/Total): 0.4440 (11988/26997) 
+[2022-05-12 14:56:11,590 INFO] Epoch id: 6, Training steps: 100, Avg loss: 1.318
+[2022-05-12 14:57:22,623 INFO] Epoch id: 6, Training steps: 200, Avg loss: 1.329
+[2022-05-12 14:58:33,664 INFO] Epoch id: 6, Training steps: 300, Avg loss: 1.331
+[2022-05-12 14:59:44,701 INFO] Epoch id: 6, Training steps: 400, Avg loss: 1.330
+[2022-05-12 15:00:55,732 INFO] Epoch id: 6, Training steps: 500, Avg loss: 1.341
+[2022-05-12 15:02:06,761 INFO] Epoch id: 6, Training steps: 600, Avg loss: 1.344
+[2022-05-12 15:03:17,802 INFO] Epoch id: 6, Training steps: 700, Avg loss: 1.323
+[2022-05-12 15:04:28,840 INFO] Epoch id: 6, Training steps: 800, Avg loss: 1.328
+[2022-05-12 15:05:39,792 INFO] Epoch id: 6, Training steps: 900, Avg loss: 1.320
+[2022-05-12 15:06:33,203 INFO] Confusion matrix:
+[2022-05-12 15:06:33,203 INFO] tensor([[ 553,  285,   69,  172,  144,   61],
+        [1221, 4510,  773, 1650, 1556,  730],
+        [ 149,  353,  785,  222,  196,   69],
+        [ 484, 1181,  402, 2141, 1209,  277],
+        [ 475,  967,  330, 1014, 3963,  315],
+        [  66,  132,   50,  100,   91,  302]])
+[2022-05-12 15:06:33,204 INFO] Report precision, recall, and f1:
+[2022-05-12 15:06:33,204 INFO] Label 0: 0.431, 0.188, 0.261
+[2022-05-12 15:06:33,204 INFO] Label 1: 0.432, 0.607, 0.505
+[2022-05-12 15:06:33,204 INFO] Label 2: 0.443, 0.326, 0.375
+[2022-05-12 15:06:33,204 INFO] Label 3: 0.376, 0.404, 0.390
+[2022-05-12 15:06:33,204 INFO] Label 4: 0.561, 0.554, 0.557
+[2022-05-12 15:06:33,204 INFO] Label 5: 0.408, 0.172, 0.242
+[2022-05-12 15:06:33,204 INFO] Acc. (Correct/Total): 0.4539 (12254/26997) 
+[2022-05-12 15:07:47,327 INFO] Epoch id: 7, Training steps: 100, Avg loss: 1.271
+[2022-05-12 15:08:58,350 INFO] Epoch id: 7, Training steps: 200, Avg loss: 1.293
+[2022-05-12 15:10:09,368 INFO] Epoch id: 7, Training steps: 300, Avg loss: 1.285
+[2022-05-12 15:11:20,386 INFO] Epoch id: 7, Training steps: 400, Avg loss: 1.280
+[2022-05-12 15:12:31,404 INFO] Epoch id: 7, Training steps: 500, Avg loss: 1.299
+[2022-05-12 15:13:42,426 INFO] Epoch id: 7, Training steps: 600, Avg loss: 1.283
+[2022-05-12 15:14:53,452 INFO] Epoch id: 7, Training steps: 700, Avg loss: 1.286
+[2022-05-12 15:16:04,471 INFO] Epoch id: 7, Training steps: 800, Avg loss: 1.274
+[2022-05-12 15:17:15,423 INFO] Epoch id: 7, Training steps: 900, Avg loss: 1.282
+[2022-05-12 15:18:08,546 INFO] Confusion matrix:
+[2022-05-12 15:18:08,547 INFO] tensor([[ 511,  251,   56,  140,  107,   38],
+        [ 862, 3629,  468, 1045,  963,  481],
+        [ 223,  527,  942,  294,  277,  104],
+        [ 654, 1528,  466, 2428, 1308,  323],
+        [ 558, 1232,  389, 1194, 4293,  354],
+        [ 140,  261,   88,  198,  211,  454]])
+[2022-05-12 15:18:08,547 INFO] Report precision, recall, and f1:
+[2022-05-12 15:18:08,547 INFO] Label 0: 0.463, 0.173, 0.252
+[2022-05-12 15:18:08,548 INFO] Label 1: 0.487, 0.489, 0.488
+[2022-05-12 15:18:08,548 INFO] Label 2: 0.398, 0.391, 0.394
+[2022-05-12 15:18:08,548 INFO] Label 3: 0.362, 0.458, 0.404
+[2022-05-12 15:18:08,548 INFO] Label 4: 0.535, 0.600, 0.566
+[2022-05-12 15:18:08,548 INFO] Label 5: 0.336, 0.259, 0.292
+[2022-05-12 15:18:08,548 INFO] Acc. (Correct/Total): 0.4540 (12257/26997) 
+[2022-05-12 15:19:22,674 INFO] Epoch id: 8, Training steps: 100, Avg loss: 1.240
+[2022-05-12 15:20:33,716 INFO] Epoch id: 8, Training steps: 200, Avg loss: 1.238
+[2022-05-12 15:21:44,740 INFO] Epoch id: 8, Training steps: 300, Avg loss: 1.248
+[2022-05-12 15:22:55,761 INFO] Epoch id: 8, Training steps: 400, Avg loss: 1.248
+[2022-05-12 15:24:06,783 INFO] Epoch id: 8, Training steps: 500, Avg loss: 1.244
+[2022-05-12 15:25:17,837 INFO] Epoch id: 8, Training steps: 600, Avg loss: 1.241
+[2022-05-12 15:26:28,857 INFO] Epoch id: 8, Training steps: 700, Avg loss: 1.246
+[2022-05-12 15:27:39,879 INFO] Epoch id: 8, Training steps: 800, Avg loss: 1.249
+[2022-05-12 15:28:50,836 INFO] Epoch id: 8, Training steps: 900, Avg loss: 1.255
+[2022-05-12 15:29:44,234 INFO] Confusion matrix:
+[2022-05-12 15:29:44,234 INFO] tensor([[ 627,  358,  106,  224,  209,   76],
+        [1287, 4754,  792, 1762, 1560,  608],
+        [ 146,  332,  829,  232,  199,   71],
+        [ 240,  537,  195, 1490,  566,  133],
+        [ 471, 1084,  356, 1284, 4327,  298],
+        [ 177,  363,  131,  307,  298,  568]])
+[2022-05-12 15:29:44,235 INFO] Report precision, recall, and f1:
+[2022-05-12 15:29:44,235 INFO] Label 0: 0.392, 0.213, 0.276
+[2022-05-12 15:29:44,235 INFO] Label 1: 0.442, 0.640, 0.523
+[2022-05-12 15:29:44,235 INFO] Label 2: 0.458, 0.344, 0.393
+[2022-05-12 15:29:44,235 INFO] Label 3: 0.471, 0.281, 0.352
+[2022-05-12 15:29:44,235 INFO] Label 4: 0.553, 0.604, 0.578
+[2022-05-12 15:29:44,235 INFO] Label 5: 0.308, 0.324, 0.316
+[2022-05-12 15:29:44,235 INFO] Acc. (Correct/Total): 0.4665 (12595/26997) 
+[2022-05-12 15:30:58,367 INFO] Epoch id: 9, Training steps: 100, Avg loss: 1.201
+[2022-05-12 15:32:09,401 INFO] Epoch id: 9, Training steps: 200, Avg loss: 1.198
+[2022-05-12 15:33:20,431 INFO] Epoch id: 9, Training steps: 300, Avg loss: 1.206
+[2022-05-12 15:34:31,466 INFO] Epoch id: 9, Training steps: 400, Avg loss: 1.209
+[2022-05-12 15:35:42,496 INFO] Epoch id: 9, Training steps: 500, Avg loss: 1.230
+[2022-05-12 15:36:53,524 INFO] Epoch id: 9, Training steps: 600, Avg loss: 1.227
+[2022-05-12 15:38:04,548 INFO] Epoch id: 9, Training steps: 700, Avg loss: 1.209
+[2022-05-12 15:39:15,573 INFO] Epoch id: 9, Training steps: 800, Avg loss: 1.214
+[2022-05-12 15:40:26,536 INFO] Epoch id: 9, Training steps: 900, Avg loss: 1.206
+[2022-05-12 15:41:19,934 INFO] Confusion matrix:
+[2022-05-12 15:41:19,935 INFO] tensor([[ 721,  452,  112,  236,  210,   96],
+        [ 983, 4132,  600, 1305, 1190,  549],
+        [ 173,  421,  884,  268,  231,   82],
+        [ 446, 1043,  357, 2070,  948,  256],
+        [ 505, 1148,  375, 1239, 4396,  324],
+        [ 120,  232,   81,  181,  184,  447]])
+[2022-05-12 15:41:19,935 INFO] Report precision, recall, and f1:
+[2022-05-12 15:41:19,936 INFO] Label 0: 0.395, 0.245, 0.302
+[2022-05-12 15:41:19,936 INFO] Label 1: 0.472, 0.556, 0.511
+[2022-05-12 15:41:19,936 INFO] Label 2: 0.429, 0.367, 0.396
+[2022-05-12 15:41:19,936 INFO] Label 3: 0.404, 0.391, 0.397
+[2022-05-12 15:41:19,936 INFO] Label 4: 0.550, 0.614, 0.580
+[2022-05-12 15:41:19,936 INFO] Label 5: 0.359, 0.255, 0.298
+[2022-05-12 15:41:19,936 INFO] Acc. (Correct/Total): 0.4686 (12650/26997) 
+[2022-05-12 15:42:34,062 INFO] Epoch id: 10, Training steps: 100, Avg loss: 1.175
+[2022-05-12 15:43:45,082 INFO] Epoch id: 10, Training steps: 200, Avg loss: 1.182
+[2022-05-12 15:44:56,127 INFO] Epoch id: 10, Training steps: 300, Avg loss: 1.198
+[2022-05-12 15:46:07,154 INFO] Epoch id: 10, Training steps: 400, Avg loss: 1.191
+[2022-05-12 15:47:18,176 INFO] Epoch id: 10, Training steps: 500, Avg loss: 1.187
+[2022-05-12 15:48:29,223 INFO] Epoch id: 10, Training steps: 600, Avg loss: 1.171
+[2022-05-12 15:49:40,245 INFO] Epoch id: 10, Training steps: 700, Avg loss: 1.181
+[2022-05-12 15:50:51,270 INFO] Epoch id: 10, Training steps: 800, Avg loss: 1.186
+[2022-05-12 15:52:02,211 INFO] Epoch id: 10, Training steps: 900, Avg loss: 1.191
+[2022-05-12 15:52:55,644 INFO] Confusion matrix:
+[2022-05-12 15:52:55,644 INFO] tensor([[ 726,  463,  117,  249,  216,   99],
+        [ 981, 4095,  577, 1297, 1168,  515],
+        [ 167,  417,  892,  263,  226,   82],
+        [ 408,  969,  329, 2001,  870,  244],
+        [ 531, 1219,  401, 1284, 4470,  337],
+        [ 135,  265,   93,  205,  209,  477]])
+[2022-05-12 15:52:55,645 INFO] Report precision, recall, and f1:
+[2022-05-12 15:52:55,645 INFO] Label 0: 0.388, 0.246, 0.301
+[2022-05-12 15:52:55,645 INFO] Label 1: 0.474, 0.551, 0.510
+[2022-05-12 15:52:55,645 INFO] Label 2: 0.436, 0.370, 0.400
+[2022-05-12 15:52:55,645 INFO] Label 3: 0.415, 0.378, 0.395
+[2022-05-12 15:52:55,645 INFO] Label 4: 0.542, 0.624, 0.580
+[2022-05-12 15:52:55,645 INFO] Label 5: 0.345, 0.272, 0.304
+[2022-05-12 15:52:55,645 INFO] Acc. (Correct/Total): 0.4690 (12661/26997) 
+[2022-05-12 15:52:58,159 INFO] Test set evaluation.
+[2022-05-12 15:53:27,811 INFO] Confusion matrix:
+[2022-05-12 15:53:27,813 INFO] tensor([[ 407,  222,   64,  144,  125,   38],
+        [ 512, 2311,  352,  679,  573,  292],
+        [  84,  231,  452,  134,  142,   44],
+        [ 239,  538,  184, 1096,  457,  144],
+        [ 344,  712,  196,  697, 2549,  204],
+        [  77,  148,   75,  127,  108,  298]])
+[2022-05-12 15:53:27,813 INFO] Report precision, recall, and f1:
+[2022-05-12 15:53:27,813 INFO] Label 0: 0.407, 0.245, 0.306
+[2022-05-12 15:53:27,813 INFO] Label 1: 0.490, 0.555, 0.520
+[2022-05-12 15:53:27,813 INFO] Label 2: 0.416, 0.342, 0.375
+[2022-05-12 15:53:27,813 INFO] Label 3: 0.412, 0.381, 0.396
+[2022-05-12 15:53:27,814 INFO] Label 4: 0.542, 0.645, 0.589
+[2022-05-12 15:53:27,814 INFO] Label 5: 0.358, 0.292, 0.322
+[2022-05-12 15:53:27,814 INFO] Acc. (Correct/Total): 0.4742 (7113/14999) 

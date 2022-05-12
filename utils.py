@@ -11,7 +11,7 @@ import numpy as np
 import pandas as pd 
 import nest_asyncio
 from tqdm import tqdm
-from bv2av import bv_to_av
+#from bv2av import bv_to_av
 
 from collections import Counter
 from bilibili_api import video, comment, sync, exceptions
