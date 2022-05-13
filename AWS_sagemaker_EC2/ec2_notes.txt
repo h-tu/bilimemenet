@@ -1,0 +1,36 @@
+s3://sagemkaker-danmu0512/train/
+source ~/anaconda3/etc/profile.d/conda.sh
+
+jupyter password:
+sha1:9ad50eef801b:553f33851b3df141fb0e76382b2928d2be699f71
+'sha1:e3cec31d3e4f:18e031a2900b8d8131a2c8c58e4c365ad9bbbb60'
+'sha1:63ee1a2ee06b:77863172220ae64550365640b58fb3dabe5c2716'
+
+conf = get_config()
+
+conf.NotebookApp.ip = '0.0.0.0'
+conf.NotebookApp.password = u'YOUR PASSWORD HASH'
+conf.NotebookApp.port = 8888
+
+cd /home/ec2-user/bilimemenet
+source activate py37
+screen
+jupyter-lab --no-browser --allow-root
+
+jupyter notebook --allow-root
+
+
+ conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+ sudo /usr/local/cuda-11.5/bin/cuda-uninstaller
+ 
+ conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+ 
+ pip3 install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
+ 
+ 
+ sudo dd if=/dev/zero of=/swapfile bs=1G count=32
+ sudo chmod 600 /swapfile
+ sudo mkswap /swapfile
+ sudo swapon /swapfile
+ sudo swapon -s
+/swapfile swap swap defaults 0 0

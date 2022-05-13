@@ -1,0 +1,1 @@
+python run_glue.py --model_name_or_path uer/chinese_roberta_L-12_H-768 --output_dir checkpoints --max_seq_length 128 --per_device_train_batch_size 1 --learning_rate 2e-5 --num_train_epochs 1 --do_train --do_predict --train_file data_csv/train.csv --validation_file data_csv/val.csv  --test_file data_csv/test.csv > output.txt 
