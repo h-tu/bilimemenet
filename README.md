@@ -8,7 +8,12 @@
     - Chang Xue (cxue@umass.edu)
     - Yichao Zhang (yichaozhang@umass.edu)
 
-## Contents
-- Data Scraping
-- Chinese Bert fine-tuning
-- TODO
+## Contents in Different Branches
+- ht_dev: 
+        Dataset collection, Data pre-processing, Baseline model implementation, Chinese-Bert Fine Tuning
+- zhm_dev:
+        Fine Tunning ByT5, Chinese Roberta and GPT-2. Code implementation in AWS/sagemaker and EC2 instances. 
+- zyc_dev:
+        Fine Tunning GLM and ALBERT
+- xc_dev/initial:
+        Implemented data preprocessing and prompt tuning
