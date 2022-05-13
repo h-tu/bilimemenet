@@ -2,4 +2,4 @@
 
 - for Fine tunning the Roberta: `./6_cates/UER/chinese_roberta/test_UER.ipynb`
 - for Fine tunning the GPT-2: `./6_cates/UER/GPT2/test_UER.ipynb`
-- - for Fine tunning the Roberta: `byt5/train_danmu.ipynb`
+- for Fine tunning the byt5: `byt5/train_danmu.ipynb`
